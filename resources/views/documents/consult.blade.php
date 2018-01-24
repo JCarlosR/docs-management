@@ -29,50 +29,59 @@
                         </ul>
                     </div>
                 @endif
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card-box">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <select name="category_id" class="form-control">
-                                        <option value="">Seleccione subcategoría</option>
-                                        @foreach($category->subcategories as $subcategory)
-                                            <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-sm-3">
-                                    <select name="category_id" class="form-control select2">
-                                        <option>Seleccione año</option>
-                                        @for($year = 1900; $year <= date('Y') ;$year++)
-                                            <option value="{{ $year }}">{{ $year }}</option>
-                                        @endfor
-                                    </select>
-                                </div>
-                                <div class="col-sm-3">
-                                    <select name="category_id" class="form-control">
-                                        <option value="">Seleccione mes</option>
-                                        <option value="1">Enero</option>
-                                        <option value="2">Febrero</option>
-                                        <option value="3">Marzo</option>
-                                        <option value="4">Abril</option>
-                                        <option value="5">Mayo</option>
-                                        <option value="6">Junio</option>
-                                        <option value="7">Julio</option>
-                                        <option value="8">Agosto</option>
-                                        <option value="9">Septiembre</option>
-                                        <option value="10">Octubre</option>
-                                        <option value="11">Noviembre</option>
-                                        <option value="12">Diciembre</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-3">
-                                    <button class="btn btn-trans btn-inverse" title="buscar"><i class="fa fa-search m-r-5"> Aplicar filtros</i></button>
+                <form role="form"  action="" method="POST">
+                    {{ csrf_field() }}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card-box">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <select name="category_id" class="form-control">
+                                                <option value="">Seleccione subcategoría</option>
+                                                @foreach($category->subcategories as $subcategory)
+                                                    <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <select name="category_id" class="form-control select2">
+                                                <option>Seleccione año</option>
+                                                @for($year = 1900; $year <= date('Y') ;$year++)
+                                                    <option value="{{ $year }}">{{ $year }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <select name="category_id" class="form-control">
+                                                <option value="">Seleccione mes</option>
+                                                <option value="1">Enero</option>
+                                                <option value="2">Febrero</option>
+                                                <option value="3">Marzo</option>
+                                                <option value="4">Abril</option>
+                                                <option value="5">Mayo</option>
+                                                <option value="6">Junio</option>
+                                                <option value="7">Julio</option>
+                                                <option value="8">Agosto</option>
+                                                <option value="9">Septiembre</option>
+                                                <option value="10">Octubre</option>
+                                                <option value="11">Noviembre</option>
+                                                <option value="12">Diciembre</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button class="btn btn-trans btn-inverse" title="buscar"><i class="fa fa-search m-r-5"> Aplicar filtros</i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
@@ -92,10 +101,10 @@
                                     <td class="text-center">Fecha</td>
                                     <td class="text-center">Por quien</td>
                                     <td class="text-center">
-                                        <a href="/documents/id/consult" class="btn btn-sm btn-success" title="Ver">
+                                        <a href="" class="btn btn-sm btn-success" title="Ver">
                                             <i class="fa fa-eye"> Ver</i>
                                         </a>
-                                        <a href="/documents/id/consult" class="btn btn-sm btn-success" title="Imprimir">
+                                        <a href="" class="btn btn-sm btn-success" title="Imprimir">
                                             <i class="fa fa-print"> Imprmir</i>
                                         </a>
                                     </td>
