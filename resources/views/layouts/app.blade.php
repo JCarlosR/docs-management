@@ -20,6 +20,9 @@
     <!-- calendar-->
     <link href="{{ asset('plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet">
 
+    <!-- Tour css -->
+    <link href="{{ asset('plugins/hopscotch/css/hopscotch.min.css') }}" rel="stylesheet" type="text/css" />
+
     {{--search select--}}
     <link href="{{ asset('plugins/select2/dist/css/select2.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('plugins/select2/dist/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css">{{ asset('') }}

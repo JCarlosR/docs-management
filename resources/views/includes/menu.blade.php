@@ -4,10 +4,10 @@
         <li>
             <a href="/home" class="waves-effect"><i class="zmdi zmdi-home"></i> <span>Página principal</span></a>
         </li>
-        <li>
+        <li id="logo-tour">
             <a href="/documents/crear" class="waves-effect"><i class="fa fa-file-o"></i> <span>Nuevo documento</span></a>
         </li>
-        <li>
+        <li id="page-title-tour">
             <a href="/documents" class="waves-effect"><i class="fa fa-files-o"></i> <span>Consultar documentos</span></a>
         </li>
     </ul>
