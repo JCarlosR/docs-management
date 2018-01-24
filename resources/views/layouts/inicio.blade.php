@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
 
     <!-- App title -->
-    <title>{{ config('app.name', 'SaveDocs') }}</title>
+    <title>{{ config('app.name', 'C.I.D') }}</title>
 
     <!-- App CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -36,8 +36,8 @@
 <div class="clearfix"></div>
 <div class="wrapper-page">
     <div class="text-center">
-        <a href="login" class="logo"><span>Save<span>Doc</span></span></a>
-        <h5 class="text-muted m-t-0 font-600">Registro de documentos escaneados</h5>
+        <a href="login" class="logo"><span>C. <span>I. </span>D.</span></a>
+        <h5 class="text-muted m-t-0 font-600">Control Interno Documentario</h5>
     </div>
         @yield('content')
 </div>

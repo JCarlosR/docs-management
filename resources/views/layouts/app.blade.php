@@ -12,7 +12,7 @@
     <link href="{{ asset('plugins/fileuploads/css/dropify.min.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- App title -->
-    <title>{{ config('app.name', 'SaveDocs') }}</title>
+    <title>{{ config('app.name', 'C.I.D') }}</title>
 
     <!-- Custom box css -->
     <link href="{{ asset('plugins/custombox/dist/custombox.min.css') }}" rel="stylesheet">
@@ -43,7 +43,7 @@
     <div class="topbar">
         <!-- LOGO -->
         <div class="topbar-left">
-            <a href="home" class="logo"><span>Save<span>Docs</span></span><i class="zmdi zmdi-layers"></i></a>
+            <a href="home" class="logo"><span>C. <span>I. </span>D. </span><i class="zmdi zmdi-layers"></i></a>
         </div>
         <!-- Button mobile view to collapse sidebar menu -->
         <div class="navbar navbar-default" role="navigation">
