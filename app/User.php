@@ -22,7 +22,7 @@ class User extends Authenticatable
     public function getRoleNameAttribute() // accessor role_name
     {
         if ($this->role == 0)
-            return 'Superadministrador';
+            return 'Super Admin';
         if ($this->role == 1)
             return 'Administrador';
 

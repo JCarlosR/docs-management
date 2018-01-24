@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('styles')
-    <!-- Plugins css-->
-    <link href="{{ asset('plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet">
+
 @endsection
 
 @section('page-title')
@@ -44,20 +43,17 @@
                         </div>
                         <div class="form-group">
                             <label for="category_id">Categoría</label>
-                            <select name="category_id" class="form-control">
-                                <option value="">Seleccione</option>
+                            <select name="category_id" class="form-control" id="select-category">
+                                <option value="">Seleccione categoría</option>
                                 @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="severity">Subcategoria</label>
-                            <select name="severity" class="form-control">
-                                <option value="">Seleccione</option>
-                                <option value="M">Menor</option>
-                                <option value="N">Normal</option>
-                                <option value="A">Alta</option>
+                            <label for="severity">Subcategoría</label>
+                            <select name="severity" class="form-control" id="select-subcategory">
+                                <option value="">Seleccione subcategoría</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -81,10 +77,6 @@
         </div> <!-- container -->
     </div> <!-- content -->
 
-    <footer class="footer">
-        2017 © Selektools.
-    </footer>
-
 </div>
 @endsection
 
@@ -96,6 +88,27 @@
             autoclose: true,
             todayHighlight: true
         });
+    </script>
+    <script>
+        $(function() {
+            $('#select-category').on('change', onSelectCategoryChange);
+        });
+
+        function onSelectCategoryChange() {
+            var category_id = $(this).val();
+
+            if (! category_id) {
+                $('#select-subcategory').html('<option value="">Seleccione subcategoría</option>');
+                return;
+            }
+            // AJAX
+            $.get('/api/category/'+category_id+'/subcategories', function (data) {
+                var html_select = '<option value="">Seleccione subcategoría</option>';
+                for (var i=0; i<data.length; ++i)
+                    html_select += '<option value="'+data[i].id+'">'+data[i].name+'</option>';
+                $('#select-subcategory').html(html_select);
+            });
+        }
     </script>
 @endsection
 

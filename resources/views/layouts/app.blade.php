@@ -17,6 +17,9 @@
     <!-- Custom box css -->
     <link href="{{ asset('plugins/custombox/dist/custombox.min.css') }}" rel="stylesheet">
 
+    <!-- calendar-->
+    <link href="{{ asset('plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet">
+
     {{--search select--}}
     <link href="{{ asset('plugins/select2/dist/css/select2.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('plugins/select2/dist/css/select2-bootstrap.css') }}" rel="stylesheet" type="text/css">{{ asset('') }}
@@ -50,10 +53,13 @@
             <div class="container">
                 <!-- Page title -->
                 <ul class="nav navbar-nav navbar-left">
-
+                    <li>
+                        <button class="button-menu-mobile open-left">
+                            <i class="zmdi zmdi-menu"></i>
+                        </button>
+                    </li>
                     <li>
                         <h6 class="page-title">
-
                             @yield('page-title', 'Bienvenido')
                         </h6>
                     </li>
@@ -104,6 +110,10 @@
     </div>
 
     @yield('content')
+
+    <footer class="footer">
+        © 2018 – Control Interno Documentario.
+    </footer>
 
 </div>
 

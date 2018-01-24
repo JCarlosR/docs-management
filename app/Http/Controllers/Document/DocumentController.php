@@ -4,11 +4,17 @@ namespace App\Http\Controllers\Document;
 
 use App\Category;
 use App\Document;
+use App\Subcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class DocumentController extends Controller
 {
+    public function byCategory($id)
+    {
+        return Subcategory::where('category_id', $id)->get();
+    }
+
     public function index()
     {
         $categories = Category::all();

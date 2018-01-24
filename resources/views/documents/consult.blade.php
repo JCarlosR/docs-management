@@ -44,7 +44,7 @@
                                 <div class="col-sm-3">
                                     <select name="category_id" class="form-control select2">
                                         <option>Seleccione año</option>
-                                        @for($year = 1900; $year<=2018 ;$year++)
+                                        @for($year = 1900; $year <= date('Y') ;$year++)
                                             <option value="{{ $year }}">{{ $year }}</option>
                                         @endfor
                                     </select>

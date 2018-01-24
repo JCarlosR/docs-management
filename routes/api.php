@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Web API
+Route::get('/category/{id}/subcategories', 'Document\DocumentController@byCategory');
